@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Consulta </h1>
+    <hr>
+    <h4>Nome: <%=paciente.name%> </h4>
+    <h4>Email: <%=paciente.email%></h4>
+    <h4>CPF: <%=paciente.cpf%></h4>
+    
+    <% var local;%>
+    <%if (paciente.finished == false){ local = 'Em Aberto'%>
+    <h4>Estado: <%=local%> </h4>
+    <hr>
+    <a href="/finish/<%=paciente._id%>">Finalizar Consulta</a>
+    <%}else{ local = 'Atendimento Fechado'%>
+    <h4>Estado: <%=local%> </h4>
+    <hr>
+    <%}%>
+    
+    <h1>Descrição de Consulta</h1>
+    <p><%=paciente.description%></p>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <script src="./main.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="calendar">
+
+    </div>
+</body>
+<script>
+    var element = document.getElementById("calendar");
+    var calendar = new FullCalendar.Calendar(element,{
+        initalView: 'dayGridMonth',
+        locale: 'pt-br',
+        events: 'getlistfull',
+        eventClick: (info) =>{ // EVENTO CLICK FULL CALENDAR
+            window.location.href = '/event/' + info.event.id
+        }
+    })
+    calendar.render();
+</script>
+</html>

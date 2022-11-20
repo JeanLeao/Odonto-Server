@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./main.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="center">
+        <div class="corpo">
+            <div id="calendar"></div>
+        </div>
+        <hr>
+        <div class="rigth">
+            <h1>DannyLais</h1>
+            <h2>Cadastrar Consulta</h2>
+
+            <h2>Buscar Consulta</h2>
+
+
+        </div>
+    </div>
+</body>
+<script>
+    var element = document.getElementById("calendar");
+    var calendar = new FullCalendar.Calendar(element,{
+        initalView: 'dayGridMonth',
+        locale: 'pt-br',
+        events: 'getcalendar',
+        eventClick: (info) =>{ // EVENTO CLICK FULL CALENDAR
+            window.location.href = '/event/' + info.event.id
+        }
+    })
+    calendar.render();
+</script>
+</html>
